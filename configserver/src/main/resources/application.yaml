@@ -1,0 +1,17 @@
+server:
+  port: 9988
+spring:
+  application:
+    name:config-server
+  profiles:
+    active: git
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config
+        git:
+          uri: https://github.com/jmmunozr/test-config
+          searchPaths: "env/int.yaml, domain/"
+          default-label: master
+#spring.cloud.config.server.git.search-paths=test-config
