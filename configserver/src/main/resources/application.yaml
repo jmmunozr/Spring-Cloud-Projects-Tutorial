@@ -1,6 +1,8 @@
 server:
   port: 9988
 spring:
+  main:
+    allow-bean-definition-overriding: true
   application:
     name:config-server
   profiles:
@@ -8,10 +10,10 @@ spring:
   cloud:
     config:
       server:
-        native:
-          search-locations: classpath:/config
+        #native:
+        #  search-locations: classpath:/config
         git:
           uri: https://github.com/jmmunozr/test-config
-          searchPaths: "env/int.yaml, domain/"
+          searchPaths: "{application}/, env/, domain/"
           default-label: master
 #spring.cloud.config.server.git.search-paths=test-config
