@@ -14,6 +14,6 @@ spring:
         #  search-locations: classpath:/config
         git:
           uri: https://github.com/jmmunozr/test-config
-          searchPaths: "{application}/, env/, domain/"
+          searchPaths: "{application}/, {application}/jpa, env/, domain/"
           default-label: master
 #spring.cloud.config.server.git.search-paths=test-config
